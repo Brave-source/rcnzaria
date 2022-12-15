@@ -1,0 +1,11 @@
+==>App was created using create react app
+==>Used tailwind css as my css framework
+==>Used daisyUI for pre built components
+==>Git commit message convention to Used
+        ==>feat: Commits, that adds a new feature
+        ==>fix: Commits, that fixes a bug
+        ==>refactor: Commits, that rewrite/restructure your code, however does not change any behavior
+        ==>perf: Commits are special refactor commits, that improve performance
+        ==>style: Commits, that do not affect the meaning (white-space, formatting, missing semi-colons, etc)
+        ==>docs: Commits, that affect documentation only
+        ==>chore: Miscellaneous commits e.g. modifying .gitignore.
