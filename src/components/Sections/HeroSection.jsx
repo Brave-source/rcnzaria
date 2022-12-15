@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useCallback, useState } from "react";
 import Carousel from "../UI/Carousel/Carousel";
 import CarouselItem from "../UI/Carousel/CarouselItem";
 
@@ -31,9 +31,12 @@ const DUMMY_CAROUSEL_DATA = [
 const HeroSection = () => {
   const [carouselChildrenLength, setCarouselChildrenLength] = useState(0);
 
-  const getChildrenLengthHandler = (length) => {
-    setCarouselChildrenLength(length);
-  };
+  const getChildrenLengthHandler = useCallback(
+    (length) => {
+      setCarouselChildrenLength(length);
+    },
+    [setCarouselChildrenLength]
+  );
 
   return (
     <section className="w-full bg-white">
@@ -69,4 +72,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default memo(HeroSection);

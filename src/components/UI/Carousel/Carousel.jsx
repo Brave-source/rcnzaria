@@ -1,16 +1,12 @@
-import React from "react";
+import React, { memo, useEffect } from "react";
 
 const Carousel = ({ children, getChildrenLength }) => {
   const total = children.length;
-  const handler = () => {
+  useEffect(() => {
     getChildrenLength(total);
-  };
+  }, [total, getChildrenLength]);
 
-  return (
-    <div className="carousel w-full select-none" onClick={handler}>
-      {children}
-    </div>
-  );
+  return <div className="carousel w-full select-none">{children}</div>;
 };
 
-export default Carousel;
+export default memo(Carousel);
