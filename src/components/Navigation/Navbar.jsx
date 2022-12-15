@@ -20,10 +20,10 @@ const Navbar = () => {
       : "hover:bg-transparent hover:border-l-2 hover:lg:border-b-2 hover:lg:border-l-0 hover:border-orange-400";
   };
   return (
-    <header className="bg-white drop-shadow-md sticky">
+    <header className="bg-white drop-shadow-md sticky top-0 z-[50]">
       <div className="wrapper">
         <div className="flex p-4 items-center justify-between">
-          <Link className="logo lg:mr-4 hover:scale-50 w-24 block">
+          <Link className="logo lg:mr-4 hover:scale-105 w-24 block select-none">
             <img src={logo} alt="rcn-logo" className="w-full" />
           </Link>
           <nav className="hidden lg:flex">
@@ -42,7 +42,7 @@ const Navbar = () => {
                 <div>
                   Sermons <ChevronDownIcon className="w-4" />
                 </div>
-                <ul className="p-5 gap-3 bg-white rounded-lg shadow-md">
+                <ul className="p-5 gap-3 bg-white rounded-lg shadow-md drop-shadow-lg ">
                   <NavLink to="/" className={activeNavLink}>
                     List Sermons (A-Z)
                   </NavLink>
@@ -78,7 +78,7 @@ const Navbar = () => {
           </div>
 
           {/* navbar for extra small screens to medium devices starts here */}
-          <div className="flex lg:hidden ">
+          <div className="flex lg:hidden">
             <nav>
               <button
                 onClick={toggleNavbar}
@@ -88,10 +88,10 @@ const Navbar = () => {
                 <Bars3BottomRightIcon className="w-6 h-6 text-gray-900" />
               </button>
               {NavIsOpened && (
-                <div className="fixed lg:hidden top-0 left-0 h-screen w-full">
+                <div className="fixed lg:hidden top-0 left-0 h-screen w-full z-50">
                   <div
                     onClick={toggleNavbar}
-                    className=" w-full h-full bg-slate-900/25 backdrop-blur-[2px] z-40"
+                    className=" w-full h-full bg-slate-900/25 backdrop-blur-sm z-40"
                   ></div>
                   <div className=" flex flex-col justify-start absolute px-4 top-0 left-0 bg-white w-2/3 h-full z-[9999] animate-[slide-in_250ms_linear] ">
                     <Link className="py-6 px-4">
@@ -110,7 +110,7 @@ const Navbar = () => {
                         </NavLink>
                       </li>
                       <li>
-                        <div className={activeNavLink}>
+                        <div>
                           Sermons <ChevronDownIcon className="w-4" />
                         </div>
                         <ul className="p-5 gap-3 bg-white rounded-sm shadow-md">
