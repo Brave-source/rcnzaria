@@ -9,3 +9,12 @@
         ==>style: Commits, that do not affect the meaning (white-space, formatting, missing semi-colons, etc)
         ==>docs: Commits, that affect documentation only
         ==>chore: Miscellaneous commits e.g. modifying .gitignore.
+Our church is dedicated to spreading the message of Christ and serving our community through various programs and initiatives. We believe that partnerships are key to making a positive impact in the world and would love the opportunity to work with your organization to achieve our shared goals.
+
+Welcome to Remnant Christian Network, a church where we believe and preach the Good News of Jesus Christ!
+
+At Remnant Christian Network, we are committed to sharing the love and message of Jesus with all who seek it. We believe that Jesus is the Son of God, who came to earth to save us from our sins through his death on the cross and resurrection. We believe that through faith in Jesus, we can have eternal life and a personal relationship with God.
+
+Our church is a place of fellowship and community, where we gather together to worship God, learn from his Word, and grow in our faith. We believe that the Bible is the inspired and authoritative Word of God, and we seek to study it and apply its teachings to our lives.
+
+If you are looking for a church that is passionate about Jesus and dedicated to spreading his message, we invite you to join us at Remnant Christian Network. We would love the opportunity to get to know you and share the love of Christ with you.

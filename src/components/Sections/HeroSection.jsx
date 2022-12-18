@@ -39,7 +39,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-orange-100">
       <main className="wrapper">
         <Carousel getChildrenLength={getChildrenLengthHandler}>
           {DUMMY_CAROUSEL_DATA.map((item, index) => {
