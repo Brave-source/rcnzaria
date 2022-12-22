@@ -14,9 +14,9 @@ const styles = {
   carousel_indicators:
     "flex space-x-6 z-10 absolute bottom-6 sm:bottom-8 md:bottom-12 w-full justify-center",
   indicator:
-    "border-none delay-400 btn btn-xs btn-outline btn-circle text-white",
+    "border-gray-100/20 delay-400 btn btn-xs sm:btn-sm btn-outline btn-circle text-white/75",
   active__indicator:
-    "text-white  border-1 border-white btn btn-xs btn-outline btn-circle text-white",
+    "text-white  border-1 border-white btn btn-xs sm:btn-sm btn-outline btn-circle text-white",
 };
 
 const Carousel = ({ slides }) => {
