@@ -6,7 +6,7 @@ const SermonSection = () => {
   return (
     <section className="bg-white pb-12">
       <main className="wrapper p-4 relative h-full">
-        <ul className="flex flex-col gap-6 sm:flex-row md:w-11/12 mx-auto -mt-10 sm:-mt-14">
+        <ul className="flex flex-col gap-6 sm:flex-row md:w-11/12 mx-auto -mt-8 sm:-mt-14">
           <EventsCard />
           <SermonCard
             date="Latest Sermon"
