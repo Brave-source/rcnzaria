@@ -14,9 +14,9 @@ const styles = {
   carousel_indicators:
     "flex space-x-6 z-10 absolute bottom-6 sm:bottom-8 md:bottom-12 w-full justify-center",
   indicator:
-    "border-gray-100/20 delay-400 btn btn-xs sm:btn-sm btn-outline btn-circle text-white/75",
+    "border-gray-100/20 delay-400 btn btn-xs sm:btn-sm btn-outline btn-circle text-white/75 hover:border-white hover:bg-transparent",
   active__indicator:
-    "text-white  border-1 border-white btn btn-xs sm:btn-sm btn-outline btn-circle text-white",
+    "text-white  border-1 border-white btn btn-xs sm:btn-sm btn-outline btn-circle text-white hover:border-white hover:bg-transparent",
 };
 
 const Carousel = ({ slides }) => {
@@ -56,7 +56,7 @@ const useCarousel = (slides) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlayingSlider, setIsPlayingSlider] = useState(true);
 
-  const mouseOverHandler = () => {
+  const pauseCarouselHandler = () => {
     setIsPlayingSlider((oldState) => !oldState);
   };
 
@@ -86,8 +86,8 @@ const useCarousel = (slides) => {
       <li>
         <img
           key={slideIndex}
-          onMouseDownCapture={mouseOverHandler}
-          onMouseUpCapture={mouseOverHandler}
+          onMouseEnter={pauseCarouselHandler}
+          onMouseLeave={pauseCarouselHandler}
           src={slide.image}
           alt="Welcome to your church"
           className={imgClass}
@@ -117,11 +117,8 @@ const useCarousel = (slides) => {
   );
 
   return {
-    mouseOverHandler,
     nextHandler,
     prevHandler,
-    currentIndex,
-    setCurrentIndex,
     imageSliders,
     sliderIndictors,
   };

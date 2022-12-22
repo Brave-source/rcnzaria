@@ -6,7 +6,7 @@ import SermonSection from "../components/Sections/SermonSection";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "Home";
+    document.title = "RCN Sermons| Home";
   }, []);
 
   return (
