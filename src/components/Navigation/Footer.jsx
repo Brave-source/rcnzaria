@@ -25,19 +25,19 @@ const Footer = () => {
               <NavLink to="home" className={activeLinkClass}>
                 Home
               </NavLink>
-              <NavLink to="/" className={activeLinkClass}>
+              <NavLink to="live" className={activeLinkClass}>
                 Live Streaming
               </NavLink>
-              <NavLink to="/" className={activeLinkClass}>
+              <NavLink to="sermons" className={activeLinkClass}>
                 Sermons
               </NavLink>
-              <NavLink to="/" className={activeLinkClass}>
+              <NavLink to="contactUs" className={activeLinkClass}>
                 Contact Us
               </NavLink>
-              <NavLink to="/" className={activeLinkClass}>
+              <NavLink to="partnership" className={activeLinkClass}>
                 RKS Partnership
               </NavLink>
-              <NavLink to="/" className={activeLinkClass}>
+              <NavLink to="registration" className={activeLinkClass}>
                 E-Church Registration
               </NavLink>
             </ul>

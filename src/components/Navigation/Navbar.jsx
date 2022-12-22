@@ -104,17 +104,22 @@ const Navbar = () => {
                     <Link className="py-6 px-4">
                       <img src={logo} alt="rcn-logo" />
                     </Link>
-                    <ul
-                      className="menu bg-white"
-                      onClick={() => setNavIsOpened(false)}
-                    >
+                    <ul className="menu bg-white">
                       <li>
-                        <NavLink to="home" className={activeNavLink}>
+                        <NavLink
+                          onClick={() => setNavIsOpened(false)}
+                          to="home"
+                          className={activeNavLink}
+                        >
                           Home
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to="Live" className={activeNavLink}>
+                        <NavLink
+                          onClick={() => setNavIsOpened(false)}
+                          to="Live"
+                          className={activeNavLink}
+                        >
                           Live Streaming
                         </NavLink>
                       </li>
@@ -123,22 +128,44 @@ const Navbar = () => {
                           Sermons <ChevronDownIcon className="w-4" />
                         </NavLink>
                         <ul className="p-5 gap-3 bg-white rounded-sm shadow-md">
-                          <Link to="sermon?sort?A-Z">List Sermons (A-Z)</Link>
-                          <Link to="sermon?sort?A-Z">List Sermons by Date</Link>
+                          <Link
+                            onClick={() => setNavIsOpened(false)}
+                            to="sermons?sort?A-Z"
+                          >
+                            List Sermons (A-Z)
+                          </Link>
+                          <Link
+                            onClick={() => setNavIsOpened(false)}
+                            to="sermons?sort?A-Z"
+                          >
+                            List Sermons by Date
+                          </Link>
                         </ul>
                       </li>
                       <li>
-                        <NavLink to="ContactUs" className={activeNavLink}>
+                        <NavLink
+                          onClick={() => setNavIsOpened(false)}
+                          to="ContactUs"
+                          className={activeNavLink}
+                        >
                           Contact us
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to="Partnership" className={activeNavLink}>
+                        <NavLink
+                          onClick={() => setNavIsOpened(false)}
+                          to="Partnership"
+                          className={activeNavLink}
+                        >
                           RKS Partnership
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to="Registration" className={activeNavLink}>
+                        <NavLink
+                          onClick={() => setNavIsOpened(false)}
+                          to="Registration"
+                          className={activeNavLink}
+                        >
                           E-Church Registration
                         </NavLink>
                       </li>
