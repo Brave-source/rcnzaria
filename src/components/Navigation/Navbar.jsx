@@ -46,7 +46,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="Live" className={activeNavLink}>
-                  Live Streaming
+                  Live Stream
                 </NavLink>
               </li>
               <li>
