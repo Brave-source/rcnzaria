@@ -43,11 +43,11 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="Live" className={activeNavLink}>
                   Live Streaming
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink className={activeNavLink} to="sermons">
                   Sermons
