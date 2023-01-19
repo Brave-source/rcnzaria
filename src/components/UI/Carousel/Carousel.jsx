@@ -83,9 +83,8 @@ const useCarousel = (slides) => {
     const imgClass =
       currentIndex === slideIndex ? styles.active__slide : styles.slide;
     return (
-      <li>
+      <li key={slideIndex}>
         <img
-          key={slideIndex}
           onMouseEnter={pauseCarouselHandler}
           onMouseLeave={pauseCarouselHandler}
           src={slide.image}

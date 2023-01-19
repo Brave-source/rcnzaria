@@ -6,6 +6,7 @@ import SermonSection from "../components/Sections/SermonSection";
 
 const Home = () => {
   useEffect(() => {
+    document.querySelector("html").scrollTop = 0;
     document.title = "RCN Sermons| Home";
   }, []);
 
