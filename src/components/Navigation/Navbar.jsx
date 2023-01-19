@@ -128,7 +128,7 @@ const Navbar = () => {
                           to="Registration"
                           className={activeNavLink}
                         >
-                          E-Church Registration
+                          Partnership
                         </NavLink>
                       </li>
                     </ul>
