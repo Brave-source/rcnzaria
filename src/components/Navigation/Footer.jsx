@@ -32,7 +32,7 @@ const Footer = () => {
                 Contact Us
               </NavLink>
               <NavLink to="registration" className={activeLinkClass}>
-                E-Church Registration
+                Partnership
               </NavLink>
             </ul>
           </div>
