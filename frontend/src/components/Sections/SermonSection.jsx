@@ -1,19 +1,41 @@
-import React from "react";
+import { useEffect, useState} from "react"
+import axios from 'axios'
 import SermonCard from "../Sermons/SermonCard";
 import EventsCard from "../Events/EventsCard";
 
 const SermonSection = () => {
+  const [sermon, setSermon] = useState([])
+
+  useEffect(() => {
+    const getSermon = async () => {
+      try {
+        const res = await axios.get("/sermons");
+        setSermon(res.data);
+      } catch (err) {
+        console.log(err)
+      }
+    };
+    getSermon();
+  }, []);
+
   return (
     <section className="bg-white pb-12">
       <main className="wrapper p-4 relative h-full">
         <ul className="flex flex-col gap-6 sm:flex-row md:w-11/12 mx-auto -mt-8 sm:-mt-14">
           <EventsCard />
-          <SermonCard
-            date="Latest Sermon"
-            minister="Apt. Arome Osayi"
-            sermonName="Ordained Kingdom Realities "
-            audioMessage="https://rcnsermons.org/2021%20updload/02%20Febuary%202021%20-%20The%20Gospel%20Of%20The%20Kingdom%20II/04%20Ordained%20Kingdom%20Realities%20-%20%28Apt.%20Arome%20Osayi%29%20-%20Sun.%2028th%20Feb.%202021.mp3"
-          />
+          {
+            sermon.slice(0,1).map((item) => {
+              return (
+                <SermonCard
+                date="Latest Sermon"
+                minister={item.minister}
+                sermonName={item.title}
+                audioMessage={item.audioMessage}
+  
+                />
+              )
+            })
+          }
         </ul>
       </main>
     </section>

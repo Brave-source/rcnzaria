@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Sermon = require('../models/sermon')
+const Sermon = require('../models/Sermon')
 const router = require('express').Router()
 
 // POST A SERMON
@@ -50,7 +50,7 @@ router.get('/:id', async(req, res) => {
 // GET ALL SERMONS
 router.get('/', async(req, res) => {
     try {
-        const sermons = Sermon.find().sort({ createdAt: -1 });
+        const sermons = await Sermon.find().sort({ createdAt: -1 });
         res.status(200).json(sermons)
     }catch(err) {
         res.status(200).json(err);

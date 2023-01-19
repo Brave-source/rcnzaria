@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import SermonAudioPlay from "./SermonAudioPlay";
 
-const SermonCard = ({ date, audioMessage, sermonName, minister }) => {
+const SermonCard = ({ date, audioMessage, sermonName, minister, img }) => {
   return (
     <li className="w-full">
       <div className=" bg-white shadow-md px-4 py-5 flex flex-col gap-4 rounded-lg h-full sm:justify-between">
@@ -20,7 +20,7 @@ const SermonCard = ({ date, audioMessage, sermonName, minister }) => {
           <div className="avatar">
             <div className="w-14 rounded-full">
               <img
-                src="https://rcnsermons.org/wp-content/uploads/2020/05/Apostle-Arome-Osayi-365x365.png"
+                src={img}
                 alt="/"
               />
             </div>

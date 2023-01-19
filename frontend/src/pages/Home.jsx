@@ -14,7 +14,7 @@ const Home = () => {
       <HeroSection />
       <SermonSection />
       <AboutUsSection />
-      <AllSermonsSection />
+      <AllSermonsSection/>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import { Link } from "react-router-dom";
 import { SermonList } from "../Sermons/SermonList";
 
 const AllSermonsSection = () => {
@@ -10,13 +11,15 @@ const AllSermonsSection = () => {
           <h1 className="text-2xl tracking-wider text-gray-900 font-bold">
             2022 Sermons
           </h1>
-          <button className="flex btn btn-sm border-none rounded-none gap-2 bg-orange-500">
-            View All
-            <ArrowLongRightIcon className="w-5" />
-          </button>
+            <Link to="/Sermons">
+            <button className="flex btn btn-sm border-none rounded-none gap-2 bg-orange-500">
+                View All
+                <ArrowLongRightIcon className="w-5" />
+            </button>
+            </Link>
         </header>
         <main>
-          <SermonList />
+          <SermonList all={'all'} />
         </main>
       </div>
     </section>
