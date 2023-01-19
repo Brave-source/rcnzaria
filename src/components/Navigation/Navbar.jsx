@@ -44,6 +44,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="Live" className={activeNavLink}>
+                  Live Streaming
+                </NavLink>
+              </li>
+              <li>
                 <NavLink className={activeNavLink} to="sermons">
                   Sermons
                 </NavLink>
