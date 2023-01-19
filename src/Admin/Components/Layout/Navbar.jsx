@@ -2,6 +2,7 @@ import {
   ArrowPathIcon,
   ArrowUpOnSquareStackIcon,
   BookOpenIcon,
+  ArrowLongRightIcon,
 } from "@heroicons/react/24/outline";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -58,7 +59,7 @@ export const Navbar = ({ toggleNavbar }) => {
               aria-hidden
               className="flex items-center justify-center h-[36px] w-[36px]"
             >
-              <BookOpenIcon className="w-6 h-6" />
+              <ArrowLongRightIcon className="w-6 h-6" />
             </span>
             Login
           </NavLink>
