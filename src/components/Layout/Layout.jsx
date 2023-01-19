@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const scrollHandler = () => {
       const pageTop = document.querySelector("html");
-      if (pageTop.scrollTop > window.innerHeight) {
+      if (pageTop.scrollTop > 300) {
         setGoUpBtnIsShown(true);
       } else {
         setGoUpBtnIsShown(false);
