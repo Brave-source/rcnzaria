@@ -52,6 +52,17 @@ export const Navbar = ({ toggleNavbar }) => {
             Sermons
           </NavLink>
         </li>
+        <li onClick={mobileScreen ? toggleNavbarHandler : null}>
+          <NavLink className={activeClassHandler} to="Login">
+            <span
+              aria-hidden
+              className="flex items-center justify-center h-[36px] w-[36px]"
+            >
+              <BookOpenIcon className="w-6 h-6" />
+            </span>
+            Login
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
