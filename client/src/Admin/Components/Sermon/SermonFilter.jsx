@@ -37,7 +37,7 @@ const SermonFilter = () => {
         <select name="Month" id="Month" className="bg-gray-800 text-white">
           {MONTHS.map((month, index) => {
             return (
-              <option key={index} value={month}>
+              <option key={index} value={index + 1}>
                 {month}
               </option>
             );

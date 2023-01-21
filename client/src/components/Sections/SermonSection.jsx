@@ -26,6 +26,7 @@ const SermonSection = () => {
             sermon.slice(0,1).map((item) => {
               return (
                 <SermonCard
+                key={item._id}
                 date="Latest Sermon"
                 minister={item.minister}
                 sermonName={item.title}

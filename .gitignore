@@ -9,6 +9,7 @@ server/node_modules
 
 # testing
 client/coverage
+server/.env
 
 # production
 client/build

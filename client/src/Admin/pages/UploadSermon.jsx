@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Card from "../Components/UI/Card";
-import { useFileInput } from "./UpdateHeroImg";
 import {
   getStorage,
   ref,

@@ -1,6 +1,16 @@
 import { CameraIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import { useState } from "react";
 import Card from "../Components/UI/Card";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import app from "../../firebase";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addHeroFailure, addHeroStart, addHeroSuccess } from "../../store/slices/heroSlice";
 
 export function useFileInput() {
   const [file, setFile] = useState(null);
@@ -12,24 +22,59 @@ export function useFileInput() {
   return [file, updateFileFn];
 }
 const UpdateHeroImg = () => {
-  const [hero1, updateHero1Handler] = useFileInput();
-  const [hero2, updateHero2Handler] = useFileInput();
-  const [hero3, updateHero3Handler] = useFileInput();
-  const [hero4, updateHero4Handler] = useFileInput();
-  const [hero5, updateHero5Handler] = useFileInput();
-  const [hero6, updateHero6Handler] = useFileInput();
+  const [file, setFile] = useState(null);
+  const dispatch = useDispatch();
 
   const formSubmitHandler = (evt) => {
     evt.preventDefault();
+    const fileName = new Date().getTime() + file.name;
+    const storage = getStorage(app);
+    const storageRef = ref(storage, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-    const heroCarousels = {
-      hero1,
-      hero2,
-      hero3,
-      hero4,
-      hero5,
-      hero6,
-    };
+    // Register three observers:
+    // 1. 'state_changed' observer, called any time the state changes
+    // 2. Error observer, called on failure
+    // 3. Completion observer, called on successful completion
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Observe state change events such as progress, pause, and resume
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused");
+            break;
+          case "running":
+            console.log("Upload is running");
+            break;
+          default:
+        }
+      },
+      (error) => {
+        // Handle unsuccessful uploads
+      },
+      () => {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          const hero = { ...file, image: downloadURL };
+          const addHero = async() => {
+            dispatch(addHeroStart());
+            try {
+              const res = await axios.post('/heros', hero);
+              dispatch(addHeroSuccess(res.data));
+            }catch(err) {
+              dispatch(addHeroFailure());
+            }
+          }
+          addHero();
+        });
+      }
+    );
   };
 
   return (
@@ -43,12 +88,12 @@ const UpdateHeroImg = () => {
       >
         <div className="flex flex-col gap-1">
           <label
-            htmlFor="hero1"
+            htmlFor="hero"
             className="bg-transparent border border-gray-800 h-52 lg:h-72 rounded-md focus:outline-blue-600 flex items-center justify-center"
           >
-            {hero1 ? (
+            {file ? (
               <img
-                src={hero1}
+                src={URL.createObjectURL(file)}
                 alt="/"
                 className="w-full h-full object-cover object-center rounded-md"
               />
@@ -58,9 +103,9 @@ const UpdateHeroImg = () => {
           </label>
           <input
             type="file"
-            name="hero1"
-            id="hero1"
-            onChange={updateHero1Handler}
+            name="image"
+            id="hero"
+            onChange={(e) => setFile(e.target.files[0])}
             accept="image/*"
             hidden
           />

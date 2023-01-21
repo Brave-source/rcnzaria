@@ -5,6 +5,7 @@ import Audio from "../components/Sermons/Audio";
 
 const Home = lazy(() => import("../pages/Home"));
 const Registration = lazy(() => import("../pages/Registration"));
+const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 const ContactUs = lazy(() => import("../pages/ContactUs"));
 const SermonDetails = lazy(() => import("../pages/SermonDetails"));
 const Sermons = lazy(() => import("../pages/Sermons"));
@@ -17,6 +18,7 @@ const MainPages = (params) => {
         <Route path="/" element={<Navigate to="home" />} />
         <Route path="home" element={<Home />} />
         <Route path="Registration" element={<Registration />} />
+        <Route path="home/error" element={<ErrorPage />} />
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="/sermons/:month/:year" element={<SermonDetails />} />
         <Route path="Sermons" element={<Sermons />} />

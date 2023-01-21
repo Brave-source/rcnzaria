@@ -2,6 +2,7 @@ import {
   ArrowPathIcon,
   ArrowUpOnSquareStackIcon,
   BookOpenIcon,
+  ArrowLongRightIcon
 } from "@heroicons/react/24/outline";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -50,6 +51,17 @@ export const Navbar = ({ toggleNavbar }) => {
               <BookOpenIcon className="w-6 h-6" />
             </span>
             Sermons
+          </NavLink>
+        </li>
+        <li onClick={mobileScreen ? toggleNavbarHandler : null}>
+          <NavLink className={activeClassHandler} to="Login">
+            <span
+              aria-hidden
+              className="flex items-center justify-center h-[36px] w-[36px]"
+            >
+              <ArrowLongRightIcon className="w-6 h-6" />
+            </span>
+            Login
           </NavLink>
         </li>
       </ul>

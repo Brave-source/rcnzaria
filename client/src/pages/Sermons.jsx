@@ -1,5 +1,4 @@
 import { useEffect, useState} from "react"
-import axios from 'axios'
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const DUMMY_YEARS = [2023, 2022, 2021, 2020, 2019, 2018, 2017];
@@ -25,30 +24,20 @@ const Sermons = () => {
   const [searchParams] = useSearchParams();
   // const [years, setYears] = useState([])
 
-  const [sermon, setSermon] = useState([])
+  // const [sermons, setSermons] = useState([])
 
-  useEffect(() => {
-    const getSermon = async () => {
-      try {
-        const res = await axios.get("/sermons/find/sermons");
-        setSermon(res.data);
-      } catch (err) {
-        console.log(err)
-      }
-    };
-    getSermon();
-  }, []);
-//   const lastYear = new Date(sermon[0]?.createdAt).getFullYear()
-//   useEffect(() => {
-//   const getArrayOfYears = () => {
-//     for(let i = currentYear; i >= lastYear; i--){
-//       setYears((prev) => ({...prev, i}))
-//     }
-//   }
-//   getArrayOfYears()
-//  },[lastYear])
+  // useEffect(() => {
+  //   const getSermons = async () => {
+  //     try {
+  //       const res = await axios.get("/sermons/find/sermons");
+  //       setSermons(res.data);
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   };
+  //   getSermons();
+  // }, []);
 
-//  console.log(years)
   useEffect(() => {
     document.title = "Sermons";
     document.querySelector("html").scrollTop = 0;

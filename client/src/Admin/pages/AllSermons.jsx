@@ -6,7 +6,7 @@ import SermonList from "../Components/Sermon/SermonList";
 import Card from "../Components/UI/Card";
 import { SermonListHeader } from "../Components/Sermon/SermonListHeader";
 import SermonFilter from "../Components/Sermon/SermonFilter";
-import { addSermonStart, addSermonSuccess, getSermonFailure, getSermonStart, getSermonSuccess } from "../../store/slices/sermonSlice";
+import { getSermonFailure, getSermonStart, getSermonSuccess } from "../../store/slices/sermonSlice";
 
 // const DUMMY_SERMON_DATA = [
 //   {
