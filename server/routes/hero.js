@@ -48,7 +48,7 @@ router.get('/:id', async(req,  res) => {
 // GET ALL HEROS
 router.get('/', async(req,  res) => {
     try {
-        const getHeroS = await Hero.find().sort({createdAt: -1});
+        const getHeroS = await Hero.find().sort({createdAt: -1}).limit(6);
         res.status(200).json(getHeroS);
     }catch(err) {
         res.status(500).json(err);

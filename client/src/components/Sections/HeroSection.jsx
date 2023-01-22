@@ -42,6 +42,7 @@ const HeroSection = () => {
     }
     getHeros();
   },[])
+  console.log(heros)
 
   return (
     <section className="w-full bg-orange-100">

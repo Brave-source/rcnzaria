@@ -58,7 +58,7 @@ const UpdateHeroImg = () => {
         // Handle unsuccessful uploads
       },
       () => {
-        // Handle successful uploads on complete
+        // Handle successful uloads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           const hero = { ...file, image: downloadURL };
