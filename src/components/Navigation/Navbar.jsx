@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import {
   Bars3BottomRightIcon,
-  ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { Link, NavLink } from "react-router-dom";
@@ -44,19 +43,15 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="Live" className={activeNavLink}>
                   Live Stream
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink className={activeNavLink} to="sermons">
-                  Sermons <ChevronDownIcon className="w-4" />
+                  Sermons
                 </NavLink>
-                <ul className="p-5 gap-3 bg-white rounded-lg shadow-md drop-shadow-lg ">
-                  <Link to="sermons?sort=A-Z">List Sermons (A-Z)</Link>
-                  <Link to="sermons?sort=date">List Sermons by Date</Link>
-                </ul>
               </li>
               <li>
                 <NavLink to="ContactUs" className={activeNavLink}>
@@ -64,19 +59,14 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="Partnership" className={activeNavLink}>
-                  RKS Partnership
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="Registration" className={activeNavLink}>
-                  E-Church Registration
+                  Partnership
                 </NavLink>
               </li>
             </ul>
           </nav>
           <div className="flex ml-auto lg:m-0 gap-4">
-            <button>
+            <button title="Search">
               <MagnifyingGlassIcon className="w-6 h-6 text-gray-900" />
             </button>
             {/* <button>
@@ -117,30 +107,11 @@ const Navbar = () => {
                       <li>
                         <NavLink
                           onClick={() => setNavIsOpened(false)}
-                          to="Live"
+                          to="sermons"
                           className={activeNavLink}
                         >
-                          Live Streaming
+                          Sermons
                         </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="sermons" className={activeNavLink}>
-                          Sermons <ChevronDownIcon className="w-4" />
-                        </NavLink>
-                        <ul className="p-5 gap-3 bg-white rounded-sm shadow-md">
-                          <Link
-                            onClick={() => setNavIsOpened(false)}
-                            to="sermons?sort?A-Z"
-                          >
-                            List Sermons (A-Z)
-                          </Link>
-                          <Link
-                            onClick={() => setNavIsOpened(false)}
-                            to="sermons?sort?A-Z"
-                          >
-                            List Sermons by Date
-                          </Link>
-                        </ul>
                       </li>
                       <li>
                         <NavLink
@@ -154,19 +125,10 @@ const Navbar = () => {
                       <li>
                         <NavLink
                           onClick={() => setNavIsOpened(false)}
-                          to="Partnership"
-                          className={activeNavLink}
-                        >
-                          RKS Partnership
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          onClick={() => setNavIsOpened(false)}
                           to="Registration"
                           className={activeNavLink}
                         >
-                          E-Church Registration
+                          Partnership
                         </NavLink>
                       </li>
                     </ul>

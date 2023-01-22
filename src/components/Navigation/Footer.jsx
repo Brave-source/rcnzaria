@@ -25,20 +25,14 @@ const Footer = () => {
               <NavLink to="home" className={activeLinkClass}>
                 Home
               </NavLink>
-              <NavLink to="live" className={activeLinkClass}>
-                Live Streaming
-              </NavLink>
               <NavLink to="sermons" className={activeLinkClass}>
                 Sermons
               </NavLink>
               <NavLink to="contactUs" className={activeLinkClass}>
                 Contact Us
               </NavLink>
-              <NavLink to="partnership" className={activeLinkClass}>
-                RKS Partnership
-              </NavLink>
               <NavLink to="registration" className={activeLinkClass}>
-                E-Church Registration
+                Partnership
               </NavLink>
             </ul>
           </div>
@@ -57,19 +51,19 @@ const Footer = () => {
                 <span>
                   <PhoneIcon className="w-6 text-orange-500" />
                 </span>
-                +2348060508888
+                +234 806 050 8888
               </li>
               <li className="flex gap-2 items-center justify-center sm:justify-start">
                 <span>
                   <PhoneIcon className="w-6 text-orange-500" />
                 </span>
-                +2348139073081
+                +234 813 907 3081
               </li>
               <li className="flex gap-2 items-center justify-center sm:justify-start">
                 <span>
                   <PhoneIcon className="w-6 text-orange-500" />
                 </span>
-                +2348036635894
+                +234 803 663 5894
               </li>
             </ul>
           </div>

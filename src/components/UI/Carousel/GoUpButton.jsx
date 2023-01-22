@@ -8,6 +8,7 @@ const UpBtn = () => {
   };
   return (
     <button
+      title="Scroll to page top"
       onClick={GoToPageTopHandler}
       className="btn btn-outline btn-sm btn-circle bg-orange-100 fixed bottom-2 md:bottom-8 right-5 z-50 bounce"
     >

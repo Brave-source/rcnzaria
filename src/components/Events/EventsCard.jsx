@@ -26,7 +26,7 @@ const EventsCard = () => {
               <span aria-hidden>
                 <ClockIcon className="w-6 text-orange-500" />
               </span>
-              Sunday(8:00am-9:00am)
+              Sunday(7:00am-9:00am)
             </p>
             <p className="flex gap-3 capitalize items-center text-sm leading-6">
               <span aria-hidden>
