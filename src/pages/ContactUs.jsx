@@ -16,7 +16,7 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 py-4 gap-3 px-4">
           <div className=" sm:text-lg tracking-wide">
             <p className="text-lg md:text-xl">
-              We’d Love to Hear From You. <br /> You can contact us by sending
+              We would Love to Hear From You. <br /> You can contact us by sending
               an email or call us with these numbers:
             </p>
             <ul className="flex flex-col gap-2">
